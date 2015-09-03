@@ -5,7 +5,7 @@ Checkout the [Source Code](https://github.com/lemoogle/algolia-autocomplete)
 
 ## Objective: Build an Algolia-based auto-completion menu for e-commerce
 
-![](http://puu.sh/jY3aa/d5f606a011.png)
+![](http://g.recordit.co/j99GMdR7JD.gif)
 
 My first decision was deciding whether I should simply implement a simple autocomplete solution, i.e. a dropdown on a text input, or if a fully fledged search app with filtering would be better.
 Considering the realtime nature of algolia queries, a full search experience would essentially serve as an augmented Autocomplete, so I decided to go that way.
