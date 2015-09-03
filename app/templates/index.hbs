@@ -1,0 +1,77 @@
+
+<div class="sectioncontainer">
+
+  <section class="content content-search bgcolor-8">
+
+
+    <span class="input input--isao">
+
+      {{input class="input__field input__field--isao" type="text" value=model.text}}
+
+    					<label class="input__label input__label--isao" for="input-38" data-content="Search">
+    						<span class="input__label-content input__label-content--isao">Search</span>
+    					</label>
+    </span>
+</section>
+
+<section class="content content--related">
+
+<div class="row">
+  <div class="col-md-2">
+
+    {{#each facets as |facet|}}
+    <div class="facets">
+      <h3>{{facet.key}}</h3>
+      <ul class="facet-list">
+      {{#each facet.val as |entry|}}
+        <li>
+        <label>
+          {{#view "facetbox" facet=facet.key selected=model.selectedFacets content=entry.key }}{{/view}}
+            {{entry.key}} - {{entry.val}}
+      </label>
+    </li>
+      {{/each}}
+    </ul>
+    </div>
+    {{/each}}
+
+
+  </div>
+  <div class="col-md-10">
+    <div class="alert alert-success" role="alert">
+      {{#view "select"
+       content=sortOptions
+       optionValuePath="content.value"
+       optionLabelPath="content.name"
+       value=ranking
+    }}
+    {{/view}}
+      </div>
+    {{#each results as |result|}}
+    <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">{{result.name}}</h3>
+          </div>
+          <div class="panel-body row">
+
+            <div class="item-image col-md-1">
+              <img src="{{result.image}}"/>
+            </div>
+            <div class="item-desc col-md-10 ">
+                 {{result.description}}
+            </div>
+            <div class="item-price col-md-1">
+              {{result.price}}
+            </div>
+
+          </div>
+     </div>
+
+    {{else}}
+    Sorry no results yet!
+    {{/each}}
+  </div>
+
+</div>
+</section>
+</div>
