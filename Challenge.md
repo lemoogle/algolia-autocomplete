@@ -1,5 +1,7 @@
 #Algolia Autocomplete UI Exercise
 
+Checkout the [Live Demo](http://lemoogle.github.io/algolia-autocomplete/)
+Checkout the [Source Code](https://github.com/lemoogle/algolia-autocomplete)
 
 ## Objective: Build an Algolia-based auto-completion menu for e-commerce
 
@@ -12,6 +14,13 @@ My next step was deciding what technologies to use, what I really wanted was to 
 I looked at Angular at first, as I wanted to learn something while achieving the exercise, but then decided on using Ember.js, a framework i've used before at hackathons, always badly or so I thought.
 
 Halfway through building, I realized I was pretty much building [Algolia's Instant Search demo but in Ember](http://demos.algolia.com/instant-search-demo/), I decided to keep going and ended up taking a few pointers from it ( i.e. the Sort )
+
+## Indexing of the data
+
+* I dragged and dropped the JSON.
+* Set facets to brand, type, categories, price
+* Set fields to index brand, name , categories, description
+* For price sorting, created 2 indexes with custom ranking on price.
 
 
 ## Ember-CLI
@@ -200,6 +209,7 @@ I've just shown all of the logic that takes a model and gets the results from al
 
 Ember offers an Input helper, we attach its value to "model.text" and that's all we need to do! Now any change to that input's value ( i.e. when we type in it) changes the model.text value. That change is observed by our index controller and it runs a search for each keystroke!
 
+![](http://g.recordit.co/j99GMdR7JD.gif)
 
 **Sort selection**
 
