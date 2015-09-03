@@ -1,7 +1,11 @@
 # Algoliasearch
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+An Ember.js application to search 10000 bestbuy items indexed on [Algolia](https://www.algolia.com/).
+
+This README contains only information on how to build and deploy the app, for more information on the application and the usecase, checkout [this Page](https://github.com/lemoogle/algolia-autocomplete/blob/master/Challenge.md)
+
+![](http://g.recordit.co/j99GMdR7JD.gif)
+
 
 ## Prerequisites
 

@@ -15,7 +15,7 @@ export default Ember.Checkbox.extend({
              } else {
                  facets[currentFacet].removeObject(facet);
              }
-             this.get('controller').propertyDidChange('model.selectedFacets')
+             this.get('controller').propertyDidChange('model.selectedFacets');
 
          }
     });

@@ -4,9 +4,9 @@ export default Ember.Route.extend({
     controller.set('model',search);
   },
   model: function(params){
-   var selectedFacets={"brand":[],"categories":[],"type":[],"price":[]}
+   var selectedFacets={"brand":[],"categories":[],"type":[],"price":[]};
 
-   return {'page':0, 'ranking':'', 'text':'', 'selectedFacets':selectedFacets}
+   return {'page':0, 'ranking':'', 'text':'', 'selectedFacets':selectedFacets};
 
   }
 });

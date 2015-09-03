@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import Algolia from '../adapters/algolia'
+import Algolia from '../adapters/algolia';
 export default Ember.Controller.extend({
 
   results:[],
@@ -13,10 +13,10 @@ export default Ember.Controller.extend({
   ranking:"",
 
   search: function() {
-    var model=this.get('model')
-    var adapter = this.get('adapter')
+    var model=this.get('model');
+    var adapter = this.get('adapter');
     var self=this;
-    this.set("model.ranking", this.get('ranking'))
+    this.set("model.ranking", this.get('ranking'));
     adapter.search(model).then(function(content){
 
       var facets= content.facets;
@@ -25,7 +25,7 @@ export default Ember.Controller.extend({
         for (var key in obj){
           res.push({"key":key,"val":obj[key]});
         }
-        return res
+        return res;
       }
       for (var facet in facets){
         facets[facet]=objToArray(facets[facet]);
@@ -33,8 +33,8 @@ export default Ember.Controller.extend({
       facets=objToArray(facets);
 
       self.set('results',content.hits);
-      self.set('facets', facets)
-    })
+      self.set('facets', facets);
+    });
   }.observes('model.text','model.selectedFacets','ranking')
 
 });
